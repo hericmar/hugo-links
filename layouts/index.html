@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <main>
+    <h1>{{ .Title }}</h1>
+    {{ with .Site.Params.subtitle }}
+    <p>{{ . }}</p>
+    {{ end }}
+
+    <ul class="links">
+      {{ range .Site.Params.links }}
+      {{ $link := . }}
+      <li>
+        {{ partial "link.html" $link }}
+      </li>
+      {{ end }}
+    </ul>
+  </main>
+{{ end }}
