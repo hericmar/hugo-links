@@ -1,15 +1,16 @@
 {{ $link := . }}
-{{ $icon := resources.Get (print "icons/" $link.type ".svg") }}
+{{ $filename := lower $link.type }}
+{{ $icon := resources.Get (print "icons/" $filename ".svg") }}
 {{ $value := $link.type }}
 {{ if eq $link.type "pgp" }}
   {{ $value = $link.value }}
 {{ end }}
 
 <a class="link" href="{{ $link.url }}" target="_blank">
-  {{ if $icon }}
-    <span>
-      {{ $icon.Content | safeHTML }}
+  {{- if $icon -}}
+    <span role="img">
+      {{- $icon.Content | safeHTML -}}
     </span>
-  {{ end }}
-  {{ $value | safeHTML }}
+  {{- end -}}
+  {{- $value | safeHTML -}}
 </a>
