@@ -8,9 +8,7 @@
 
 <a class="link" href="{{ $link.url }}" target="_blank">
   {{- if $icon -}}
-    <span role="img">
-      {{- $icon.Content | safeHTML -}}
-    </span>
+    {{- $icon.Content | safeHTML -}}
   {{- end -}}
   {{- $value | safeHTML -}}
 </a>

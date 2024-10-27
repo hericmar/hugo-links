@@ -37,21 +37,19 @@ li {
     margin-bottom: 0.75rem;
 }
 
-.link {
+a.link {
     display: flex;
+    gap: 0.75rem;
     align-items: center;
     padding: 0.75rem 1rem;
     border-radius: 8px;
     background-color: var(--link-background);
-}
-
-a.link {
     color: var(--font);
     text-decoration: none;
 }
 
-.link span {
+.link svg {
+    flex-shrink: 0;
     width: 1.5rem;
     height: 1.5rem;
-    padding-right: 0.75rem;
 }
