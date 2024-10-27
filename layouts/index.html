@@ -1,9 +1,7 @@
 {{ define "main" }}
   <main>
     <h1>{{ .Title }}</h1>
-    {{ with .Site.Params.subtitle }}
-    <p>{{ . }}</p>
-    {{ end }}
+    <p>{{ .Site.Params.subtitle }}</p>
 
     <ul class="links">
       {{ range .Site.Params.links }}

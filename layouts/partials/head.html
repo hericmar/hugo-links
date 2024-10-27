@@ -1,6 +1,11 @@
+<title>{{- .Title -}}</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-  {{ $css := resources.Get "style.css" }}
-  {{ $css.Content | safeCSS }}
+  {{- $themeName := .Site.Params.theme | default "light" -}}
+  {{- $themeFile := (print "themes/" $themeName ".css") -}}
+  {{- $theme := resources.Get $themeFile -}}
+  {{- $theme.Content | safeCSS -}}
+  {{- $css := resources.Get "style.css" -}}
+  {{- $css.Content | safeCSS -}}
 </style>
